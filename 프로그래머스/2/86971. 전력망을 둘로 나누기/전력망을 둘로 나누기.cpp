@@ -10,6 +10,11 @@ using namespace std;
 
 vector<int> adj[MAX];
 
+// 1. 간선 정보 재저장
+// 2. 노드들의 간선을 잘라보며 bfs 탐색
+// 3. answer min값 찾아 반환
+// * 리프 노드를 제외 후 탐색하면 더 빠르지 않을까...
+
 int bfs(int n1, int n2) {
 	queue <int> q;
 	bool visited[MAX] = { 0, };
