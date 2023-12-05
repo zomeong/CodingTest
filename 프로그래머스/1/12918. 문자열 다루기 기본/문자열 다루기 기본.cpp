@@ -8,9 +8,8 @@ bool solution(string s) {
     
     if(s.size() != 4 && s.size() != 6) return false;
     
-    for(int i = 0; i < s.size(); i++){
-        int asc = s[i] - 0;
-        if(asc > 57 || asc < 48) return false;
+    for(char c : s){
+        if(!isdigit(c)) return false;
     }
     
     return answer;
