@@ -10,11 +10,11 @@ string solution(string s) {
     vector<int> num;
     istringstream iss(s);
 
-    do {
+    while(iss) {
         string token;
         iss >> token;
         if(!token.empty()) num.push_back(stoi(token));
-    } while (iss);
+    }
 
     sort(num.begin(), num.end());
 
