@@ -1,11 +1,11 @@
 def solution(sizes):
-    answer = [0, 0]
+    r, c = 0, 0
     
-    for s in sizes:
-        if s[0] < s[1]:
-            s[0], s[1] = s[1], s[0]
+    for x, y in sizes:
+        if x < y:
+            x, y = y, x
             
-        answer[0] = max(s[0], answer[0])
-        answer[1] = max(s[1], answer[1])
+        r = max(r, x)
+        c = max(c, y)
     
-    return answer[0] * answer[1]
+    return r * c
