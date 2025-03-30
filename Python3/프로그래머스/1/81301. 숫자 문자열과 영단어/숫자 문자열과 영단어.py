@@ -11,23 +11,8 @@ def solution(s):
         "eight":"8",
         "nine":"9"
     }
-    pos = []
-    answer = ""
     
     for d in dct:
-        idx = s.find(d)
-        while idx != -1:
-            pos.append([idx, dct[d]])
-            idx = s.find(d, idx + 1)
-            
-        idx = s.find(dct[d])
-        while idx != -1:
-            pos.append([idx, dct[d]])
-            idx = s.find(dct[d], idx + 1)
-            
-    pos.sort()
+        s = s.replace(d, dct[d])
     
-    for p in pos:
-        answer += p[1]
-    
-    return int(answer)
+    return int(s)
