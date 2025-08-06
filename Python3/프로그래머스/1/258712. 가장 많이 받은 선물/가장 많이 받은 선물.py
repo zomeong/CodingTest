@@ -1,22 +1,18 @@
+from collections import defaultdict
+
 def solution(friends, gifts):
     answer = 0
-    gift_dict, gift_count, result = {}, {}, []
+    gift_dict = defaultdict(lambda: defaultdict(int))
+    gift_count, result = {}, []
     
     # 주고받은 선물 딕셔너리
     for g in gifts:
         names = g.split()
-        a = names[0]
-        b = names[1]
+        a, b = names[0], names[1]
         
-        if a in gift_dict:
-            gift_dict[a]['total'] += 1
-            if b in gift_dict[a]:
-                gift_dict[a][b] += 1
-            else:
-                gift_dict[a][b] = 1
-        else:
-            gift_dict[a] = { b:1 , 'total':1 }
-    
+        gift_dict[a][b] += 1
+        gift_dict[a]['total'] += 1
+        
     # 선물 지수 딕셔너리
     for f in friends:
         give = gift_dict.get(f,{}).get('total', 0)
