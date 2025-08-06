@@ -7,8 +7,7 @@ def solution(friends, gifts):
     
     # 주고받은 선물 딕셔너리
     for g in gifts:
-        names = g.split()
-        a, b = names[0], names[1]
+        a, b = g.split()
         
         gift_dict[a][b] += 1
         gift_dict[a]['total'] += 1
